@@ -23,3 +23,31 @@ client: ABC Auto Inc.
 project: redevelopment of billing application
 description: started migration to new Djano app. Stubbed out some new models
 billable: yes
+
+Example from IDLE
+
+>>> from gcalreport import *
+>>> query = Query(date_from='2011-11-01', date_to='2011-12-01', calendar_service=calendar_service, calendars=settings.calendars)
+>>> query.run_query()
+
+>>> query.print_query_summary()
+Date from:  2011-11-01
+Date to:    2011-12-01
+Text query: None
+Total time: 204.00
+Client: ABC Auto Ltd.               47.25
+Client: DEF Hardware Inc.            4.00
+Client: GHI Grocery                 92.25
+Client: JKL Engineering             60.50
+
+>>> query.print_client_summary(client='JKL Engineering')
+Client:        JKL Engineering
+Date from:     2011-11-01
+Date to:       2011-12-01
+Text query:    None
+Total time:    60.50
+Billable:      57.50
+Non Billable:  3.00
+Client: MHDL                   Project: New Lab System             29.00
+Client: MHDL                   Project: app consolidation          31.00
+Client: MHDL                   Project: support                     0.50
