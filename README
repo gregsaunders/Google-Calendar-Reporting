@@ -1,0 +1,25 @@
+gcalreport requires a "settings.py" file. Example below
+
+
+<settings.py>
+
+calendars = {
+    'Greg':    'Your_google_calendar_ID',
+    'Jerry':   'Your_google_calendar_ID',
+    'Michael': 'Your_google_calendar_ID'
+}
+
+username = 'Your_User_Name@gmail.com'
+password = 'Your_Gmail_Password'
+
+max_results = 1000
+
+</settings.py>
+
+
+The Query object expects to find the following in the "Description" of the event/appointment.
+
+client: ABC Auto Inc.
+project: redevelopment of billing application
+description: started migration to new Djano app. Stubbed out some new models
+billable: yes
