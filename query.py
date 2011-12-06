@@ -222,6 +222,7 @@ class Query(object):
 
             for an_event in feed.entry:
                 event = Event()
+                event.staff   = calendar_name
                 event.title   = an_event.title.text
                 event.content = an_event.content.text
                 
